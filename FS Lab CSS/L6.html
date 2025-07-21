@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All CSS Layouts in One Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    section {
+      margin-bottom: 60px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    section h2 {
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+
+    /* --- Layout A: Float Blog --- */
+    .float-layout header, .float-layout footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    .float-layout nav {
+      float: left;
+      width: 20%;
+      background-color: #f4f4f4;
+      padding: 15px;
+    }
+
+    .float-layout .content {
+      float: left;
+      width: 50%;
+      padding: 15px;
+    }
+
+    .float-layout .sidebar {
+      float: left;
+      width: 30%;
+      background-color: #f9f9f9;
+      padding: 15px;
+    }
+
+    .float-layout .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .float-layout footer {
+      clear: both;
+    }
+
+    /* --- Layout B: Flexbox Navbar --- */
+    .flex-nav nav {
+      background-color: #333;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    .flex-nav ul {
+      display: flex;
+      justify-content: space-around;
+      list-style: none;
+    }
+
+    .flex-nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      display: block;
+    }
+
+    .flex-nav ul li a:hover {
+      background: #444;
+      border-radius: 4px;
+    }
+
+    @media (max-width: 600px) {
+      .flex-nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .flex-nav ul li {
+        width: 100%;
+      }
+    }
+
+    /* --- Layout C: Grid Gallery --- */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .photo-card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .caption {
+      background: #f0f0f0;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>CSS Layout Demonstrations</h1>
+
+  <!-- Section 1: Float Blog Layout -->
+  <section>
+    <h2>Float Blog Layout</h2>
+    <div class="float-layout">
+      <header>
+        <h3>Float Blog Header</h3>
+      </header>
+      <div class="clearfix">
+        <nav>
+          <h4>Navigation</h4>
+          <ul>
+            <li>Home</li>
+            <li>Blog</li>
+            <li>Contact</li>
+          </ul>
+        </nav>
+        <div class="content">
+          <h4>Blog Post</h4>
+          <p>This is the main content area using float layout.</p>
+        </div>
+        <aside class="sidebar">
+          <h4>Sidebar</h4>
+          <p>Additional content or widgets.</p>
+        </aside>
+      </div>
+      <footer>
+        <p>Float Footer © 2025</p>
+      </footer>
+    </div>
+  </section>
+
+  <!-- Section 2: Flexbox Navigation -->
+  <section>
+    <h2>Flexbox Navigation Bar</h2>
+    <div class="flex-nav">
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p>Resize the screen to see how the navigation items stack vertically on small screens.</p>
+  </section>
+
+  <!-- Section 3: Grid Photo Gallery -->
+  <section>
+    <h2>CSS Grid Photo Gallery</h2>
+    <div class="gallery">
+      <div class="photo-card">
+        <img src="FS.png" alt="Image 1">
+        <div class="caption">
+          <span>Photo 1</span>
+          <span>📸</span>
+        </div>
+      </div>
+      <div class="photo-card">
+        <img src="city.jpg" alt="Image 2">
+        <div class="caption">
+          <span>Photo 2</span>
+          <span>🌇</span>
+        </div>
+      </div>
+      <div class="photo-card">
+        <img src="ny.jpg" alt="Image 3">
+        <div class="caption">
+          <span>Photo 3</span>
+          <span>📷</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

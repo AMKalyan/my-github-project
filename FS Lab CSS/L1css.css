@@ -1,0 +1,36 @@
+/* 2. Element selector to color all <p> tags */
+p {
+    color: #333;
+    font-size: 16px;
+}
+/* 3. Class selector to style certain <li> items */
+li.highlight {
+    font-weight: bold;
+    color: darkred;
+}
+/* 4. Attribute selector for <a> tags containing "http" in href */
+a[href*="http"] {
+    color: teal;
+    text-decoration: underline;
+}
+/* 5a. Pseudo-class :hover for links */
+a:hover {
+    background-color: yellow;
+    transition: background-color 0.3s;
+}
+/* 5b. Pseudo-element ::first-letter on paragraphs */
+p::first-letter {
+    font-size: 200%;
+    color: darkblue;
+    font-weight: bold;
+}
+/* 6. :nth-child(even) for list items */
+ul li:nth-child(even) {
+    background-color: #b82626;
+}
+/* 7. ::before pseudo-element on h2 */
+h2::before {
+    content: "★ ";
+    color: gold;
+    font-size: 1.2em;
+}
